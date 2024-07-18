@@ -17,13 +17,13 @@ Quite simple todo list populated already with 3 tasks ... when you add a task, y
 * Simple steps to use Redux from any JS context:
 1. Install and import Redux
 2. Create a store using `Redux.createStore(reducer)` method
-** Store is where the state lives
-** A store should be created using a reducer
-** A reducer is a function that determines how the state looks like, and how it changes: function reducer (state = initialState, action)
-** Have an initial state to use as the default state for the reducer function, return state as the default case
+  ** Store is where the state lives
+  ** A store should be created using a reducer
+  ** A reducer is a function that determines how the state looks like, and how it changes: function reducer (state = initialState, action)
+  ** Have an initial state to use as the default state for the reducer function, return state as the default case
 3. `store.getState()` returns the current state
 4. store.dispatch(action)
-** An action is an object with a (type) key and string value (in uppercase 🙂)
-** Use the spread operator or create a new state to avoid being impure
-** Create actions using functions that return the action object
+  ** An action is an object with a (type) key and string value (in uppercase 🙂)
+  ** Use the spread operator or create a new state to avoid being impure
+  ** Create actions using functions that return the action object
 Reference: sections 32 and 33 of (The Advanced Web Developer Bootcamp) on Udemy
