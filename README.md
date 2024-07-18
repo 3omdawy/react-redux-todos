@@ -1,70 +1,29 @@
-# Getting Started with Create React App
+# React Redux Todos Demo
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Demo for integration of React with Redux toolkit and Saga middleware
 
-## Available Scripts
+## App Functionality
 
-In the project directory, you can run:
+Quite simple todo list populated already with 3 tasks ... when you add a task, you get a gift task from Saga
 
-### `npm start`
+## About Redux
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* Redux is a standalone JS state management library (central place to store global variables across the app)
+* It can be used without React, but it integrates well with React
+> React has other solutions like useState (but it requires props drilling to lower components) and useContext which is a good solution for simple states
+* Redux models the application state as a single JS object
+* Redux syntax is quite similar to useReducer in React. It relies on actions (JS objects with `type` attribute) and reducer functions (pure functions that return a new state based on the passed action)
+> Note: Redux dispatch is syncronous
+* Simple steps to use Redux from any JS context:
+1. Install and import Redux
+2. Create a store using `Redux.createStore(reducer)` method
+** Store is where the state lives
+** A store should be created using a reducer
+** A reducer is a function that determines how the state looks like, and how it changes: function reducer (state = initialState, action)
+** Have an initial state to use as the default state for the reducer function, return state as the default case
+3. `store.getState()` returns the current state
+4. store.dispatch(action)
+** An action is an object with a (type) key and string value (in uppercase 🙂)
+** Use the spread operator or create a new state to avoid being impure
+** Create actions using functions that return the action object
+Reference: sections 32 and 33 of (The Advanced Web Developer Bootcamp) on Udemy
